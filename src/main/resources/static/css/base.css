@@ -1,0 +1,148 @@
+@charset "ISO-8859-1";
+
+
+#navbar
+{
+	  background: #34005B !Important;
+	  border:0px !Important;
+	  margin-bottom:0px ! Important; 
+}
+.navbar-brand
+{
+	font-size:23px !Important;
+	color: green;
+	margin-top: 7px !Important;
+	color:white !Important;
+	font-size:27px !Important;
+	font-family: "Audiowide", sans-serif !Important;
+}
+
+.banner
+{
+	width:100%;
+	height:80vh;
+   margin-top:-0px ! Important; 
+   background:   linear-gradient(45deg, rgba(255, 49, 3, 0.596),
+              rgba(251, 255, 0, 0.75)), url(../img/banner.jpg);
+}
+
+.navbar-nav a
+{
+	font-size:17px !Important;
+	color:white !Important;
+}
+
+.navbar-nav li :hover
+{
+	color:black!important;
+	border-radius: 10px !Important;
+}
+
+
+.gradient-custom {
+/* fallback for old browsers */
+background: #f093fb;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+
+/* sidebar style*/
+
+.sidebar
+{
+	margin-top:38px;
+	width:18%;
+	background-color:#CFECEC;
+	height:100%;
+	position:fixed;
+	padding-top:4px;
+	text-decoration: none !Important;
+	
+	
+	
+	
+}
+
+.sidebar a
+{
+	
+	display:block;
+	width:100%;
+	padding:10px 25px;
+	color:#9400D3;
+	text-decoration: none !Important;
+	font-size:17px;
+	color:#2B1B17;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+	
+}
+
+.sidebar a:hover
+{
+	 background-color: #555;
+  color: white;
+}
+
+.sidebar .divider
+{
+	height:5px;
+	width:100%;
+	background: #1affa3; 
+}
+
+.content
+{
+	margin-left:20%; 
+}
+
+#section
+{
+	margin-top:72px;
+	z-index:-1;
+	margin-top:-5px;
+	margin-left:-35px;
+	margin-right:-15px;
+}
+
+.profile_image
+{
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+   object-fit:cover;
+   border:1px solid black;
+}
+
+ .search-container{
+	position: relative;
+}
+.search-result{
+	position: absolute;
+	background:white;
+	width: 100%;
+	padding:10px;
+	border: 1px solid gray;
+	display: none;
+}
+
+.active{
+	background:#009688 !important;
+	color:white!important;
+}
+
+ 

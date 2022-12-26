@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <section style="margin-top: 80px; ">
+          
+          <div class="container ">
+          
+          
+             <div class="card " style="width: 30rem;justify-content: center; margin-left:40%; ">
+             
+             
+							   <!-- message box  -->
+						   <div th:if="${session.message}" class="container">
+						   
+						   	  <div  class="alert alert-danger my-2 text-center" role="alert">
+				  				
+				  				<span th:text="${session.message}"></span>
+				  				
+							</div>
+							
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+							
+						   </div>
+						
+             
+  					<div class="card-body " style="justify-content: center;  text-align: center; padding-top:45px ">
+   						  <h1>varificaion of email</h1>
+   						  <form action=""  th:action="@{/forget_email}" method="POST">
+   						  
+   						   	 <!-- email -->
+   						   	
+  
+  
+  									<div class="form-group">
+    									<label for="exampleInputPassword1" style="font-size: 17px"> Enter Email</label>
+    										<input required="required" name="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="enter your email " style="font-size: 17px;">
+  									</div>
+  
+  
+  									
+  									<button type="submit" class="btn btn-warning btn-lg">Send OTP</button>
+							
+ 					      </form>   
+ 					 </div>
+			</div>
+		</div>	
+        
+     </section>
+</body>
+</html>

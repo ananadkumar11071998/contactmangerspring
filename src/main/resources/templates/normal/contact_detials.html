@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://thymeleaf.org" th:replace="/normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+    <h3> this is somethin happen</h3>
+   <section style="margin-top: 140px">
+    <div class="card">
+         <div class="card-body" th:if="${contact}">
+             <div class="container text-center" >
+             
+                
+                <img class="profile_image" alt="profile photo" th:src="@{'/img/'+${contact.image}}"  style="height:60Px; width:60Px" src=""> 
+                
+                 <h3 ><span th:text="${contact.name}"></span>(<span th:text="${contact.nickname}"></span>)</h3>
+                 
+                 <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col"><span th:text="${contact.cid}"></span></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Email</th>
+      <td><span th:text="${contact.email}"></span></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td t:text="${contact.phone}">Jacob</td>
+     
+    </tr>
+   
+  </tbody>
+</table>
+        <button type="button" class="btn btn-primary">Upadate</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+             </div>
+             
+             
+         </div>
+         
+         <h1 th:unless="${contact}">You don't have permission</h1>
+    </div>
+ </section>
+</body>
+</html>

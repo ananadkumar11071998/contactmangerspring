@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://thymeleaf.org" th:replace="/normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <section  class="vh-120 gradient-custom " id="section">
+    
+  <div class="mask d-flex align-items-center h-110 gradient-custom-3">
+    <div class="container h-100">
+    
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px; margin-top:80px;">
+            <div class="card-body p-5">
+            
+               <div th:if="${session.message}" th:classapppend="${session.message.type}" class="alert" role="alert">
+  						<p th:text="${session.message.content}"></p>
+  						<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+			   </div>
+			
+              <h2 class="text-uppercase text-center mb-5">Update Contact</h2>
+
+              <form novalidate th:action="@{/user/process_update/}" method="POST" th:object="${contact}"  enctype="multipart/form-data">
+
+                <input  th:value="${contact.cid}" type="text" name="cid"/>
+                
+                
+                <div class="form-outline mb-4">
+                  <input  th:value="${contact.name}"type="text" name="name" class="form-control form-control-lg " th:classappend="${#fields.hasErrors('name')?'is-invalid':''}"/>
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                   <div th:each="e : ${#fields.errors('name')}" th:text="${e}" class="invalid-feedback"  >
+        				Please provide a valid name
+      			  </div>
+                </div>
+              
+
+             
+                 <div class="form-outline mb-4">
+                  <input  th:value="${contact.nickname}"type="text" name="nickname" class="form-control form-control-lg " th:classappend="${#fields.hasErrors('nickname')?'is-invalid':''}"/>
+                  <label class="form-label" for="form3Example1cg">Nick Name</label>
+                   <div th:each="e : ${#fields.errors('nickname')}" th:text="${e}" class="invalid-feedback"  >
+        				Please provide a valid name nickname
+      			  </div>
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <input   th:value="${contact.email}" type="email" name="email" class="form-control form-control-lg"  th:classappend="${#fields.hasErrors('email')?'is-invalid':''}"/>
+                 <i class="fa fa-envelope" aria-hidden="true"></i> <label class="form-label" for="form3Example3cg">Your Email</label>
+                 
+                  <div th:each="e : ${#fields.errors('email')}" th:text="${e}" class="invalid-feedback"  >
+        		
+      			  </div>
+                </div>
+                
+
+                <div class="form-outline mb-4">
+                  <input th:value="${contact.work}" type="text" name="work" class="form-control form-control-lg" th:classappend="${#fields.hasErrors('work')?'is-invalid':''}" />
+                  <label class="form-label" for="form3Example4cg">Work</label>
+                  
+                   <div th:each="e : ${#fields.errors('work')}" th:text="${e}" class="invalid-feedback"  >
+        		
+      			  </div>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                  <input th:value="${contact.phone}"  type="text" name="phone" class="form-control form-control-lg"  th:classappend="${#fields.hasErrors('phone')?'is-invalid':''}"/>
+                  <label class="form-label" for="form3Example4cg">Phone Number</label>
+                  
+                   <div th:each="e : ${#fields.errors('phone')}" th:text="${e}" class="invalid-feedback"  >
+        		
+      			  </div>
+                </div>
+                
+                <div class="container text-center">
+							<img style="width: 250px;height: 250px;" class="img-fluid my_profile_picture" src="" th:src="@{'/img/'+${contact.image}}" alt="" />
+				</div>
+				<p class="text-secondary">Choose new profile pic</p>
+                  <div class="form-outline  mb-4 custom-file">
+				    <input type="file"  name="profileImage"  />
+						
+				
+				</div>
+                
+                 <div class="form-outline mb-4">
+                   <textarea  th:value="${contact.description}" class="form-control" rows="3" cols="" name="description"></textarea>
+                </div>
+
+
+                
+                
+                
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-primary  btn-block btn-lg gradient-custom-4 text-body">submit</button>
+                </div>
+               
+
+               
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+    
+</body>
+</html>

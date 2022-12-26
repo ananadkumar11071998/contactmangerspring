@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org" th:fragment="Layout(content)">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${name}">Insert title here</title>
+
+<link rel="stylesheet" href="" th:href="@{/css/base.css}"/>
+ <!-- jQuery library -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" text="html/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+</head>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-light fixed-top" id="navbar">
+     <a class="navbar-brand" href="#"><i class="fa-duotone fa-house"></i> Contact Manager</a>
+     
+      <ul class="nav navbar-nav ml-auto">
+    
+    <li><a th:href="@{/home}">Home</a></li>
+   
+    <li><a href="#">About</a></li>
+    
+    <li><a  href="#"><span class="glyphicon glyphicon-user" th:text="${.name}"></span> </a></li>
+    <li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      
+    </ul>
+  </ul>
+  
+ 
+</nav>
+
+<!-- Black with white text -->
+
+ <div 	class="sidebar" >
+   <button type="button" class="btn-close" aria-label="Close"></button>
+    <a href="" th:href="@{/user/index}" class="item"><i class="fa-solid fa-house" style="margin-right: 5px !Important"></i>Home</a>
+     <a th:href="@{/user/show_contacts/0}"  href="" class="item"><i class="fa-solid fa-address-book" style="margin-right: 5px !Important"></i>show contacts</a>
+     <a href="" th:href="@{/user/add_contact_form}"   class="item"><i class="fa-solid fa-file-signature" style="margin-right: 5px !Important"></i>Add contacts</a>
+     <a href="" th:href="@{/user/profile}" class="item"><i class="fa-regular fa-user"  style="margin-right: 5px !Important"></i>Your profile</a>
+     <a id="settings-link"  th:href="@{/user/setting/}" href="" class="item"><i class="fa-solid fa-gear" style="margin-right: 5px !Important"></i>Setting</a>
+     <a href="" th:href="@{/logout}" ><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+ </div>
+  
+ 
+ <div class="container-fluid" id="dashboard">
+  <div class="content">
+     <div th:replace="${content}"></div>
+  </div>
+ </div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

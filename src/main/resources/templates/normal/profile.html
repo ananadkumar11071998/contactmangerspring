@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://thymeleaf.org" th:replace="/normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Profile</title>
+</head>
+<body>
+  <section>
+  <div class="card " style="margin-top: 85px">
+    <div class="container">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col" th:text="${user.id}">First</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Email</th>
+      <td th:text="${user.email}">Mark</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Active</th>
+      <td th:text="${user.enable}">Jacob</td>
+    
+    </tr>
+    <tr>
+      <th scope="row">Role</th>
+      <td th:text="${user.role}">Larry</td>
+      
+    </tr>
+      <tr>
+      <th scope="row">About</th>
+      <td th:text="${user.about}">Larry</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+  </section>
+</body>
+</html>

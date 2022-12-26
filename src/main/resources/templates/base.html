@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org" th:fragment="Layout(content)">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${name}">Insert title here</title>
+
+<link rel="stylesheet" href="" th:href="@{/css/base.css}"/>
+ <!-- jQuery library -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+</head>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-light" id="navbar">
+     <a class="navbar-brand" href="#">Contact Manager</a>
+     
+      <ul class="nav navbar-nav ml-auto">
+    
+    <li><a th:href="@{/home}">Home</a></li>
+   
+    <li><a href="#">About</a></li>
+    
+    <li><a th:href="@{/signup/}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a th:href="@{/signin/} " href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </ul>
+  
+ 
+</nav>
+
+<!-- Black with white text -->
+
+  <div th:replace="${content}"></div>
+  
+</body>
+</html>
